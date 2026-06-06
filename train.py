@@ -24,7 +24,7 @@ repo = "varunneal/flash-attention-3" if cap == (9, 0) else "kernels-community/fl
 fa3 = get_kernel(repo).flash_attn_interface
 
 from prepare import MAX_SEQ_LEN, TIME_BUDGET, Tokenizer, make_dataloader, evaluate_bpb
-TIME_BUDGET = 1800  # override: 30 min — at 10 min we hit 10.9 tok/param, scaling up
+TIME_BUDGET = 3600  # override: 60 min — switching to DEPTH=8 for chinchilla-optimal coverage
 
 # ---------------------------------------------------------------------------
 # GPT Model
@@ -448,7 +448,7 @@ WARMDOWN_RATIO = 0.5    # fraction of time budget for LR warmdown
 FINAL_LR_FRAC = 0.0     # final LR as fraction of initial
 
 # Model size
-DEPTH = 6               # smaller model: ~26M params, ~2.4x faster -> ~2800 steps, 7 tok/param
+DEPTH = 8               # back to DEPTH=8: at 60min ~16500 steps ~1081M tokens ~22 tok/param (chinchilla-optimal for 50M params)
 DEVICE_BATCH_SIZE = 32   # per-device batch size (reduced from 128 for 3090 24GB)
 
 # ---------------------------------------------------------------------------
