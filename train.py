@@ -24,7 +24,7 @@ repo = "varunneal/flash-attention-3" if cap == (9, 0) else "kernels-community/fl
 fa3 = get_kernel(repo).flash_attn_interface
 
 from prepare import MAX_SEQ_LEN, TIME_BUDGET, Tokenizer, make_dataloader, evaluate_bpb
-TIME_BUDGET = 10800  # override: 180 min — DEPTH=10 at 180min hits ~18 tok/param (chinchilla for 86M)
+TIME_BUDGET = 14400  # override: 240 min — checking if curve flattens past chinchilla for DEPTH=10
 
 # ---------------------------------------------------------------------------
 # GPT Model
