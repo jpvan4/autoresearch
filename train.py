@@ -448,7 +448,7 @@ WARMDOWN_RATIO = 0.5    # fraction of time budget for LR warmdown
 FINAL_LR_FRAC = 0.0     # final LR as fraction of initial
 
 # Model size
-DEPTH = 8               # back to DEPTH=8: at 60min ~16500 steps ~1081M tokens ~22 tok/param (chinchilla-optimal for 50M params)
+DEPTH = 10              # upgrade: ~86M params — DEPTH=8 at 36 tok/param has diminishing returns
 DEVICE_BATCH_SIZE = 32   # per-device batch size (reduced from 128 for 3090 24GB)
 
 # ---------------------------------------------------------------------------
