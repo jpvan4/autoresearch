@@ -24,7 +24,7 @@ repo = "varunneal/flash-attention-3" if cap == (9, 0) else "kernels-community/fl
 fa3 = get_kernel(repo).flash_attn_interface
 
 from prepare import MAX_SEQ_LEN, TIME_BUDGET, Tokenizer, make_dataloader, evaluate_bpb
-TIME_BUDGET = 600  # override: 10 min (prepare.py has 5 min default)
+TIME_BUDGET = 1800  # override: 30 min — at 10 min we hit 10.9 tok/param, scaling up
 
 # ---------------------------------------------------------------------------
 # GPT Model
